@@ -6,36 +6,94 @@
 
 <title>Sollicitatie - Aqua Roleplay</title>
 
-<link rel="stylesheet" href="css/style.css">
-
 <style>
 body{
     margin:0;
-    background:#0a0f1a;
     font-family: Arial, Helvetica, sans-serif;
+    background:#070b14;
     color:#d1d5db;
+
+    animation: pageLoad 0.5s ease;
 }
 
-/* RP PANEL LOOK */
-.container{
-    max-width:720px;
-    margin:90px auto;
-    background:linear-gradient(180deg,#0f172a,#0b1220);
-    border:1px solid #1f2937;
-    border-left:4px solid #3b82f6; /* FiveM accent bar */
-    padding:26px;
-    border-radius:10px;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+@keyframes pageLoad{
+    from{opacity:0;}
+    to{opacity:1;}
 }
 
-/* TITLE = ADMIN PANEL STYLE */
-h1{
-    text-align:center;
-    font-size:20px;
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 28px;
+    background:#0b1220;
+    border-bottom:1px solid #1f2937;
+
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown{
+    from{transform:translateY(-10px); opacity:0;}
+    to{transform:translateY(0); opacity:1;}
+}
+
+.logo{
     font-weight:600;
     color:#e5e7eb;
+    letter-spacing:1px;
+}
+
+nav ul{
+    display:flex;
+    gap:16px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+nav ul li a{
+    color:#9ca3af;
+    text-decoration:none;
+    font-size:12px;
+    text-transform:uppercase;
+}
+
+nav ul li a:hover{
+    color:#3b82f6;
+}
+
+/* CONTAINER */
+.container{
+    max-width:720px;
+    margin:70px auto;
+    background:#0b1220;
+    border:1px solid #1f2937;
+    border-left:4px solid #3b82f6;
+    padding:24px;
+    border-radius:10px;
+
+    animation: fadeUp 0.6s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(12px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* TITLE */
+h1{
+    text-align:center;
+    font-size:18px;
     margin-bottom:18px;
-    letter-spacing:0.5px;
+    color:#e5e7eb;
+    letter-spacing:1px;
 }
 
 h1::after{
@@ -47,31 +105,30 @@ h1::after{
     margin:10px auto 0;
 }
 
-/* LABELS = DISCORD/FIVEM UI */
+/* LABEL */
 label{
     display:block;
     font-size:12px;
     text-transform:uppercase;
     letter-spacing:1px;
-    color:#94a3b8;
+    color:#9ca3af;
     margin-bottom:6px;
 }
 
-/* INPUT STYLE = PANEL FIELDS */
+/* INPUTS */
 input, select, textarea{
     width:100%;
     padding:10px 12px;
     margin-bottom:14px;
     border-radius:6px;
     border:1px solid #1f2937;
-    background:#0b1220;
+    background:#070b14;
     color:#e5e7eb;
     font-size:14px;
     outline:none;
     transition:0.2s;
 }
 
-/* FOCUS = BLUE RP GLOW */
 input:focus,
 select:focus,
 textarea:focus{
@@ -79,57 +136,77 @@ textarea:focus{
     box-shadow:0 0 0 2px rgba(59,130,246,0.15);
 }
 
-/* TEXTAREA = RP STYLE */
+/* TEXTAREA */
 textarea{
     min-height:110px;
     resize:none;
 }
 
-/* BUTTON = FIVE M ACTION BUTTON */
+/* BUTTON */
 button{
     width:100%;
     padding:11px;
-    border:none;
     border-radius:6px;
+    border:1px solid #2b3445;
     background:#1f2937;
     color:#e5e7eb;
     font-weight:600;
-    letter-spacing:0.5px;
     cursor:pointer;
     transition:0.2s;
-    border:1px solid #2b3445;
+
+    animation: fadeUp 0.8s ease;
 }
 
 button:hover{
     background:#3b82f6;
     border-color:#3b82f6;
-    transform:translateY(-1px);
+    transform:translateY(-2px);
 }
 
 button:active{
     transform:scale(0.98);
 }
 
-/* small “panel feel” spacing */
-form{
-    margin-top:10px;
+/* small info box */
+.info{
+    text-align:center;
+    font-size:12px;
+    color:#9ca3af;
+    margin-bottom:14px;
 }
 </style>
 
 </head>
+
 <body>
+
+<nav>
+    <div class="logo">AQUA ROLEPLAY</div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sollicitatie.html">Solliciteren</a></li>
+        <li><a href="nieuws.html">Nieuws</a></li>
+        <li><a href="regels.html">Regels</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
 <div class="container">
 
-<h1>STAFF APPLICATION - AQUA ROLEPLAY</h1>
+<h1>SOLLICITATIE FORMULIER</h1>
+
+<div class="info">
+Server is momenteel gesloten • sollicitaties worden later beoordeeld
+</div>
 
 <form id="sollicitatieForm">
 
-    <label>Discord ID</label>
+    <label>Discord naam</label>
     <input type="text" id="naam" required placeholder="username#0000">
 
     <label>Leeftijd</label>
-    <input type="number" id="leeftijd" required placeholder="min. 14+">
+    <input type="number" id="leeftijd" required placeholder="minimaal 14+">
 
     <label>Functie</label>
     <select id="functie">
@@ -140,19 +217,19 @@ form{
         <option>Developer</option>
     </select>
 
-    <label>Roleplay ervaring</label>
+    <label>Ervaring in roleplay</label>
     <textarea id="ervaring"></textarea>
 
-    <label>Strengths</label>
+    <label>3 sterktes</label>
     <textarea id="pluspunten"></textarea>
 
-    <label>Weaknesses</label>
+    <label>3 zwaktes</label>
     <textarea id="minpunten"></textarea>
 
     <label>Motivatie</label>
     <textarea id="motivatie"></textarea>
 
-    <button type="submit">SEND APPLICATION</button>
+    <button type="submit">VERSTUUR SOLLICITATIE</button>
 
 </form>
 
