@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aqua Roleplay - Contact</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#070b14;
+    color:#d1d5db;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 28px;
+    background:#0b1220;
+    border-bottom:1px solid #1f2937;
+}
+
+.logo{
+    font-weight:600;
+    color:#e5e7eb;
+}
+
+nav ul{
+    display:flex;
+    gap:18px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+nav ul li a{
+    color:#9ca3af;
+    text-decoration:none;
+    font-size:12px;
+    text-transform:uppercase;
+}
+
+nav ul li a:hover{
+    color:#3b82f6;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    border-bottom:1px solid #1f2937;
+}
+
+.hero h1{
+    margin:0;
+    font-size:28px;
+    color:#f3f4f6;
+}
+
+.hero p{
+    font-size:13px;
+    color:#9ca3af;
+    margin-top:10px;
+}
+
+/* CONTACT WRAPPER */
+.contact-container{
+    max-width:900px;
+    margin:40px auto;
+    padding:0 20px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:14px;
+}
+
+/* CARD */
+.card{
+    background:#0b1220;
+    border:1px solid #1f2937;
+    border-radius:8px;
+    padding:16px;
+    transition:0.2s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#3b82f6;
+}
+
+/* FORM */
+input, textarea{
+    width:100%;
+    padding:10px;
+    margin-top:8px;
+    margin-bottom:12px;
+    border-radius:6px;
+    border:1px solid #1f2937;
+    background:#070b14;
+    color:#d1d5db;
+    font-size:12px;
+    outline:none;
+}
+
+input:focus, textarea:focus{
+    border-color:#3b82f6;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#1f2937;
+    border:1px solid #2b3445;
+    color:#e5e7eb;
+    border-radius:6px;
+    font-size:12px;
+    cursor:pointer;
+    transition:0.2s;
+}
+
+button:hover{
+    background:#3b82f6;
+    border-color:#3b82f6;
+    transform:translateY(-2px);
+}
+
+/* INFO TEXT */
+.card h2{
+    font-size:14px;
+    margin:0 0 10px 0;
+    color:#e5e7eb;
+    border-bottom:1px solid #1f2937;
+    padding-bottom:8px;
+}
+
+.card p{
+    font-size:12px;
+    color:#9ca3af;
+    line-height:1.5;
+}
+
+/* DISCORD BUTTON */
+.discord{
+    display:block;
+    text-align:center;
+    margin-top:12px;
+    padding:10px;
+    border-radius:6px;
+    background:#5865F2;
+    color:white;
+    text-decoration:none;
+    font-size:12px;
+    transition:0.2s;
+}
+
+.discord:hover{
+    background:#4752c4;
+    transform:translateY(-2px);
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    font-size:12px;
+    color:#6b7280;
+    border-top:1px solid #1f2937;
+    margin-top:40px;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">AQUA ROLEPLAY</div>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sollicitatie.html">Solliciteren</a></li>
+        <li><a href="nieuws.html">Nieuws</a></li>
+        <li><a href="regels.html">Regels</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<header class="hero">
+    <h1>CONTACT</h1>
+    <p>Heb je vragen of problemen? Neem contact met ons op.</p>
+</header>
+
+<section class="contact-container">
+
+    <!-- FORM -->
+    <div class="card">
+        <h2>📩 Stuur een bericht</h2>
+
+        <input type="text" placeholder="Naam">
+        <input type="email" placeholder="Email">
+        <textarea rows="5" placeholder="Jouw bericht..."></textarea>
+
+        <button onclick="sendMessage()">Versturen</button>
+    </div>
+
+    <!-- INFO -->
+    <div class="card">
+        <h2>ℹ️ Informatie</h2>
+        <p>
+            Voor support, vragen of klachten kun je ons bereiken via Discord of het contactformulier.
+            Wij reageren zo snel mogelijk.
+        </p>
+
+        <p>
+            ⏱ Reactietijd: 24-48 uur<br>
+            📍 Discord is sneller
+        </p>
+
+        <a class="discord" href="https://discord.gg/UnYFPUC9XF" target="_blank">
+            JOIN DISCORD
+        </a>
+    </div>
+
+</section>
+
+<footer>
+    © 2026 Aqua Roleplay • Alle rechten voorbehouden
+</footer>
+
+<script>
+function sendMessage(){
+    alert("Bericht verzonden! (demo - nog niet gekoppeld)");
+}
+</script>
+
+</body>
+</html>
