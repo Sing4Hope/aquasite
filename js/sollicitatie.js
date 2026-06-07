@@ -14,7 +14,7 @@ if (form) {
       motivatie: document.getElementById("motivatie").value.trim()
     };
 
-    const response = await fetch("https://orange-rain-97cf.sing4hope.workers.dev/", {
+    const response = await fetch("https://floral-forest-2ed5.sing4hope.workers.dev/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
