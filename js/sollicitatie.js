@@ -5,13 +5,13 @@ if (form) {
     e.preventDefault();
 
     const data = {
-      naam: document.getElementById("naam").value.trim(),
-      leeftijd: document.getElementById("leeftijd").value.trim(),
-      functie: document.getElementById("functie").value.trim(),
-      ervaring: document.getElementById("ervaring").value.trim(),
-      pluspunten: document.getElementById("pluspunten").value.trim(),
-      minpunten: document.getElementById("minpunten").value.trim(),
-      motivatie: document.getElementById("motivatie").value.trim()
+      naam: document.getElementById("naam").value,
+      leeftijd: document.getElementById("leeftijd").value,
+      functie: document.getElementById("functie").value,
+      ervaring: document.getElementById("ervaring").value,
+      pluspunten: document.getElementById("pluspunten").value,
+      minpunten: document.getElementById("minpunten").value,
+      motivatie: document.getElementById("motivatie").value
     };
 
     const response = await fetch("https://floral-forest-2ed5.sing4hope.workers.dev/", {
@@ -22,11 +22,14 @@ if (form) {
       body: JSON.stringify(data)
     });
 
-    if (response.ok) {
+    const result = await response.json().catch(() => ({}));
+
+    if (response.ok && result.success) {
       alert("Sollicitatie verzonden!");
       form.reset();
     } else {
-      alert("Er ging iets mis.");
+      alert("Er ging iets mis. Check Discord webhook of Worker logs.");
+      console.log(result);
     }
   });
 }
