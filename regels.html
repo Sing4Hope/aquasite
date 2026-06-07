@@ -12,11 +12,10 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     background:#070b14;
     color:#d1d5db;
-
-    animation: pageLoad 0.6s ease-in-out;
+    animation: fadeIn 0.5s ease;
 }
 
-@keyframes pageLoad{
+@keyframes fadeIn{
     from{opacity:0;}
     to{opacity:1;}
 }
@@ -29,27 +28,17 @@ nav{
     padding:14px 28px;
     background:#0b1220;
     border-bottom:1px solid #1f2937;
-
-    animation: slideDown 0.5s ease;
-}
-
-@keyframes slideDown{
-    from{transform:translateY(-10px); opacity:0;}
-    to{transform:translateY(0); opacity:1;}
 }
 
 .logo{
     font-weight:600;
     color:#e5e7eb;
-    letter-spacing:1px;
 }
 
 nav ul{
     display:flex;
     gap:18px;
     list-style:none;
-    margin:0;
-    padding:0;
 }
 
 nav ul li a{
@@ -57,8 +46,6 @@ nav ul li a{
     text-decoration:none;
     font-size:12px;
     text-transform:uppercase;
-    letter-spacing:1px;
-    transition:0.2s;
 }
 
 nav ul li a:hover{
@@ -67,96 +54,100 @@ nav ul li a:hover{
 
 /* HERO */
 .hero{
-    padding:70px 20px;
     text-align:center;
+    padding:60px 20px;
     border-bottom:1px solid #1f2937;
-    background:
-        radial-gradient(circle at top, rgba(59,130,246,0.10), transparent 60%),
-        #070b14;
 }
 
 .hero h1{
+    margin:0;
     font-size:28px;
-    margin-bottom:10px;
     color:#f3f4f6;
-
-    animation: fadeUp 0.6s ease forwards;
 }
 
 .hero p{
-    max-width:600px;
-    margin:0 auto;
     font-size:13px;
     color:#9ca3af;
-    line-height:1.6;
-
-    animation: fadeUp 0.8s ease forwards;
+    max-width:600px;
+    margin:10px auto 0 auto;
 }
 
-/* FADE */
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(12px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+/* RULE ACCORDION */
+.rules-container{
+    max-width:800px;
+    margin:40px auto;
+    padding:0 20px;
 }
 
-/* RULE CARDS */
-.rules{
-    padding:40px 20px;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:14px;
-}
-
-.rule-card{
-    width:320px;
+/* item */
+.rule-item{
     background:#0b1220;
     border:1px solid #1f2937;
     border-radius:8px;
-    padding:16px;
-
-    animation: fadeUp 0.8s ease;
+    margin-bottom:10px;
+    overflow:hidden;
     transition:0.2s;
 }
 
-.rule-card:hover{
-    transform:translateY(-4px);
+.rule-item:hover{
     border-color:#3b82f6;
 }
 
-.rule-card h2{
-    font-size:14px;
-    margin:0 0 10px 0;
+/* header */
+.rule-header{
+    padding:14px;
+    cursor:pointer;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
     color:#e5e7eb;
-    border-bottom:1px solid #1f2937;
-    padding-bottom:8px;
+    user-select:none;
 }
 
-.rule-card ul{
+.arrow{
+    transition:0.3s;
+    color:#3b82f6;
+}
+
+/* content */
+.rule-content{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease, padding 0.3s ease;
+    padding:0 14px;
+}
+
+.rule-content ul{
     margin:0;
     padding-left:18px;
 }
 
-.rule-card li{
+.rule-content li{
     font-size:12px;
-    margin-bottom:8px;
     color:#9ca3af;
+    margin-bottom:8px;
     line-height:1.5;
 }
 
-/* FOOTER */
+/* open state */
+.rule-item.active .rule-content{
+    padding:0 14px 14px 14px;
+    max-height:400px;
+}
+
+.rule-item.active .arrow{
+    transform:rotate(180deg);
+}
+
+/* footer */
 footer{
     text-align:center;
     padding:20px;
     font-size:12px;
     color:#6b7280;
     border-top:1px solid #1f2937;
+    margin-top:40px;
 }
 </style>
 
@@ -166,7 +157,6 @@ footer{
 
 <nav>
     <div class="logo">AQUA ROLEPLAY</div>
-
     <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="sollicitatie.html">Solliciteren</a></li>
@@ -178,59 +168,85 @@ footer{
 
 <header class="hero">
     <h1>SERVER REGELS</h1>
-    <p>
-        Deze regels zorgen voor een eerlijke, realistische en leuke roleplay ervaring.
-        Het niet volgen van regels kan leiden tot straffen.
-    </p>
+    <p>Klik op een categorie om de regels te bekijken.</p>
 </header>
 
-<section class="rules">
-
-    <div class="rule-card">
-        <h2>📌 Algemene Regels</h2>
-        <ul>
-            <li>Respecteer alle spelers en staff.</li>
-            <li>Geen toxic gedrag, racisme of discriminatie.</li>
-            <li>Geen hacks, exploits of mods.</li>
-            <li>Blijf altijd realistisch in RP.</li>
-        </ul>
-    </div>
-
-    <div class="rule-card">
-        <h2>🎭 Roleplay Regels</h2>
-        <ul>
-            <li>Value your life is verplicht.</li>
-            <li>Fail RP is niet toegestaan.</li>
-            <li>RDM & VDM zijn verboden.</li>
-            <li>FearRP moet altijd worden toegepast.</li>
-        </ul>
-    </div>
-
-    <div class="rule-card">
-        <h2>🔫 Criminaliteit</h2>
-        <ul>
-            <li>Geen KOS zonder geldige reden.</li>
-            <li>Overvallen moeten realistisch zijn.</li>
-            <li>Max spelers per actie volgen.</li>
-            <li>Geen criminaliteit in safezones.</li>
-        </ul>
-    </div>
-
-    <div class="rule-card">
-        <h2>🚓 Staff Regels</h2>
-        <ul>
-            <li>Staff heeft altijd het laatste woord.</li>
-            <li>Geen discussie in-game.</li>
-            <li>Report via tickets of Discord.</li>
-            <li>Misbruik = permanente ban.</li>
-        </ul>
-    </div>
-
-</section>
+<div class="rules-container" id="rulesContainer"></div>
 
 <footer>
     © 2026 Aqua Roleplay • Alle rechten voorbehouden
 </footer>
+
+<script>
+// 🔥 HIER PAS JE ALLES AAN (regels toevoegen!)
+const rulesData = [
+    {
+        title: " Algemene Regels",
+        rules: [
+            "Respecteer alle spelers en staff.",
+            "Geen toxic gedrag, racisme of discriminatie.",
+            "Geen hacks, exploits of mods.",
+            "Blijf altijd realistisch in RP."
+        ]
+    },
+    {
+        title: "Roleplay Regels",
+        rules: [
+            "Value your life is verplicht.",
+            "Fail RP is niet toegestaan.",
+            "RDM & VDM zijn verboden.",
+            "FearRP moet altijd worden toegepast."
+        ]
+    },
+    {
+        title: "Criminaliteit",
+        rules: [
+            "Geen KOS zonder geldige reden.",
+            "Overvallen moeten realistisch zijn.",
+            "Max spelers per actie volgen.",
+            "Geen criminaliteit in safezones."
+        ]
+    },
+    {
+        title: "Staff Regels",
+        rules: [
+            "Staff heeft altijd het laatste woord.",
+            "Geen discussie in-game.",
+            "Report via Discord tickets.",
+            "Misbruik = permanente ban."
+        ]
+    }
+
+    // ➕ HIER KUN JE GEWOON NIEUWE SECTIES TOEVOEGEN
+];
+
+const container = document.getElementById("rulesContainer");
+
+rulesData.forEach((section) => {
+
+    const item = document.createElement("div");
+    item.className = "rule-item";
+
+    item.innerHTML = `
+        <div class="rule-header">
+            <span>${section.title}</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="rule-content">
+            <ul>
+                ${section.rules.map(r => `<li>${r}</li>`).join("")}
+            </ul>
+        </div>
+    `;
+
+    item.querySelector(".rule-header").addEventListener("click", () => {
+        item.classList.toggle("active");
+    });
+
+    container.appendChild(item);
+});
+
+</script>
 
 </body>
 </html>
