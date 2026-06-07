@@ -10,81 +10,109 @@
 
 <style>
 body{
-    margin: 0;
-    background:#0b1220;
-    color:#e5e7eb;
+    margin:0;
+    background:#0a0f1a;
     font-family: Arial, Helvetica, sans-serif;
+    color:#d1d5db;
 }
 
-/* container voelt meer als panel i.p.v. AI card */
+/* RP PANEL LOOK */
 .container{
-    max-width:700px;
-    margin:100px auto;
-    background:#111827;
-    padding:28px;
-    border-radius:14px;
+    max-width:720px;
+    margin:90px auto;
+    background:linear-gradient(180deg,#0f172a,#0b1220);
     border:1px solid #1f2937;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+    border-left:4px solid #3b82f6; /* FiveM accent bar */
+    padding:26px;
+    border-radius:10px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.6);
 }
 
+/* TITLE = ADMIN PANEL STYLE */
 h1{
     text-align:center;
-    color:#f3f4f6;
-    margin-bottom:18px;
-    font-size:22px;
+    font-size:20px;
     font-weight:600;
+    color:#e5e7eb;
+    margin-bottom:18px;
+    letter-spacing:0.5px;
 }
 
-/* labels iets netter en “real UI” */
+h1::after{
+    content:"";
+    display:block;
+    width:60px;
+    height:2px;
+    background:#3b82f6;
+    margin:10px auto 0;
+}
+
+/* LABELS = DISCORD/FIVEM UI */
 label{
     display:block;
-    font-size:13px;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    color:#94a3b8;
     margin-bottom:6px;
-    color:#9ca3af;
 }
 
-/* inputs minder “glow AI box” */
+/* INPUT STYLE = PANEL FIELDS */
 input, select, textarea{
     width:100%;
-    padding:11px 12px;
+    padding:10px 12px;
     margin-bottom:14px;
-    border-radius:8px;
-    border:1px solid #2b3445;
+    border-radius:6px;
+    border:1px solid #1f2937;
     background:#0b1220;
     color:#e5e7eb;
-    outline:none;
     font-size:14px;
+    outline:none;
+    transition:0.2s;
 }
 
-/* focus subtiel */
+/* FOCUS = BLUE RP GLOW */
 input:focus,
 select:focus,
 textarea:focus{
     border-color:#3b82f6;
+    box-shadow:0 0 0 2px rgba(59,130,246,0.15);
 }
 
-/* textarea iets realistischer */
+/* TEXTAREA = RP STYLE */
 textarea{
     min-height:110px;
-    resize:vertical;
+    resize:none;
 }
 
-/* button minder neon, meer panel style */
+/* BUTTON = FIVE M ACTION BUTTON */
 button{
     width:100%;
-    padding:12px;
-    border-radius:8px;
-    border:1px solid #2b3445;
-    background:#111827;
+    padding:11px;
+    border:none;
+    border-radius:6px;
+    background:#1f2937;
     color:#e5e7eb;
     font-weight:600;
+    letter-spacing:0.5px;
     cursor:pointer;
-    transition:0.2s ease;
+    transition:0.2s;
+    border:1px solid #2b3445;
 }
 
 button:hover{
-    background:#1f2937;
-    transform: translateY(-1px);
+    background:#3b82f6;
+    border-color:#3b82f6;
+    transform:translateY(-1px);
+}
+
+button:active{
+    transform:scale(0.98);
+}
+
+/* small “panel feel” spacing */
+form{
+    margin-top:10px;
 }
 </style>
 
@@ -93,17 +121,17 @@ button:hover{
 
 <div class="container">
 
-<h1>🌊 Solliciteren bij Aqua RP</h1>
+<h1>STAFF APPLICATION - AQUA ROLEPLAY</h1>
 
 <form id="sollicitatieForm">
 
-    <label>Discord Naam</label>
-    <input type="text" id="naam" required placeholder="Bijv. Thijs#1234">
+    <label>Discord ID</label>
+    <input type="text" id="naam" required placeholder="username#0000">
 
     <label>Leeftijd</label>
-    <input type="number" id="leeftijd" required placeholder="Bijv. 15">
+    <input type="number" id="leeftijd" required placeholder="min. 14+">
 
-    <label>Welke functie wil je?</label>
+    <label>Functie</label>
     <select id="functie">
         <option>Politie</option>
         <option>Ambulance</option>
@@ -112,19 +140,19 @@ button:hover{
         <option>Developer</option>
     </select>
 
-    <label>Ervaring in roleplay</label>
-    <textarea id="ervaring" required></textarea>
+    <label>Roleplay ervaring</label>
+    <textarea id="ervaring"></textarea>
 
-    <label>Noem 3 pluspunten van jezelf</label>
-    <textarea id="pluspunten" required></textarea>
+    <label>Strengths</label>
+    <textarea id="pluspunten"></textarea>
 
-    <label>Noem 3 minpunten van jezelf</label>
-    <textarea id="minpunten" required></textarea>
+    <label>Weaknesses</label>
+    <textarea id="minpunten"></textarea>
 
-    <label>Waarom wil je bij Aqua RP?</label>
-    <textarea id="motivatie" required></textarea>
+    <label>Motivatie</label>
+    <textarea id="motivatie"></textarea>
 
-    <button type="submit">Versturen 🚀</button>
+    <button type="submit">SEND APPLICATION</button>
 
 </form>
 
