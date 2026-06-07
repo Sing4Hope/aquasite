@@ -4,64 +4,87 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sollicitatie  - Aqua Roleplay</title>
+<title>Sollicitatie - Aqua Roleplay</title>
 
-<!-- FIXED CSS PAD -->
 <link rel="stylesheet" href="css/style.css">
 
 <style>
 body{
-    background:#0f172a;
-    color:white;
-    font-family:Poppins, sans-serif;
+    margin: 0;
+    background:#0b1220;
+    color:#e5e7eb;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+/* container voelt meer als panel i.p.v. AI card */
 .container{
     max-width:700px;
-    margin:120px auto;
-    background:#1e293b;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 0 20px rgba(0,0,0,0.4);
+    margin:100px auto;
+    background:#111827;
+    padding:28px;
+    border-radius:14px;
+    border:1px solid #1f2937;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.35);
 }
 
 h1{
     text-align:center;
-    color:#00d4ff;
-    margin-bottom:20px;
+    color:#f3f4f6;
+    margin-bottom:18px;
+    font-size:22px;
+    font-weight:600;
 }
 
+/* labels iets netter en “real UI” */
+label{
+    display:block;
+    font-size:13px;
+    margin-bottom:6px;
+    color:#9ca3af;
+}
+
+/* inputs minder “glow AI box” */
 input, select, textarea{
     width:100%;
-    padding:12px;
-    margin-top:10px;
-    margin-bottom:20px;
-    border:none;
-    border-radius:10px;
-    background:#0f172a;
-    color:white;
+    padding:11px 12px;
+    margin-bottom:14px;
+    border-radius:8px;
+    border:1px solid #2b3445;
+    background:#0b1220;
+    color:#e5e7eb;
     outline:none;
+    font-size:14px;
 }
 
+/* focus subtiel */
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#3b82f6;
+}
+
+/* textarea iets realistischer */
 textarea{
-    min-height:100px;
-    resize:none;
+    min-height:110px;
+    resize:vertical;
 }
 
+/* button minder neon, meer panel style */
 button{
     width:100%;
-    padding:15px;
-    border:none;
-    border-radius:10px;
-    background:#00d4ff;
-    color:black;
-    font-weight:bold;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #2b3445;
+    background:#111827;
+    color:#e5e7eb;
+    font-weight:600;
     cursor:pointer;
-    transition:0.3s;
+    transition:0.2s ease;
 }
 
 button:hover{
-    background:white;
+    background:#1f2937;
+    transform: translateY(-1px);
 }
 </style>
 
@@ -107,7 +130,6 @@ button:hover{
 
 </div>
 
-<!-- FIXED JS PAD -->
 <script src="js/sollicitatie.js"></script>
 
 </body>
