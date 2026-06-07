@@ -7,39 +7,221 @@
 <title>Aqua Roleplay</title>
 
 <link rel="stylesheet" href="css/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#070b14;
+    color:#d1d5db;
+}
+
+/* NAV = TXADMIN / FIVEM PANEL STYLE */
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 28px;
+    background:#0b1220;
+    border-bottom:1px solid #1f2937;
+}
+
+.logo{
+    font-weight:600;
+    color:#e5e7eb;
+    letter-spacing:0.5px;
+}
+
+nav ul{
+    display:flex;
+    gap:18px;
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+nav ul li a{
+    color:#9ca3af;
+    text-decoration:none;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    transition:0.2s;
+}
+
+nav ul li a:hover{
+    color:#3b82f6;
+}
+
+/* HERO = RP LANDING PANEL */
+.hero{
+    padding:90px 20px;
+    text-align:center;
+    background:
+        radial-gradient(circle at top, rgba(59,130,246,0.15), transparent 60%),
+        #070b14;
+    border-bottom:1px solid #1f2937;
+}
+
+.hero h1{
+    font-size:34px;
+    margin-bottom:10px;
+    color:#f3f4f6;
+    letter-spacing:1px;
+}
+
+.hero p{
+    max-width:600px;
+    margin:0 auto 25px auto;
+    color:#9ca3af;
+    font-size:14px;
+    line-height:1.6;
+}
+
+/* BUTTONS = FIVEM ACTION STYLE */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+}
+
+.btn{
+    padding:10px 14px;
+    border-radius:6px;
+    font-size:13px;
+    text-decoration:none;
+    border:1px solid #2b3445;
+    transition:0.2s;
+}
+
+.btn.primary{
+    background:#1f2937;
+    color:#e5e7eb;
+}
+
+.btn.primary:hover{
+    background:#3b82f6;
+    border-color:#3b82f6;
+}
+
+.btn.secondary{
+    background:transparent;
+    color:#9ca3af;
+}
+
+.btn.secondary:hover{
+    color:#e5e7eb;
+    border-color:#3b82f6;
+}
+
+/* STATS = PANEL CARDS */
+.stats{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    padding:40px 20px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background:#0b1220;
+    border:1px solid #1f2937;
+    padding:18px;
+    width:180px;
+    border-radius:8px;
+    text-align:center;
+}
+
+.card h2{
+    margin:0;
+    font-size:20px;
+    color:#e5e7eb;
+}
+
+.card p{
+    margin-top:6px;
+    font-size:12px;
+    color:#9ca3af;
+}
+
+/* FEATURES = RP GRID */
+.features{
+    padding:40px 20px;
+    text-align:center;
+}
+
+.features h1{
+    font-size:18px;
+    color:#e5e7eb;
+    margin-bottom:25px;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+    gap:14px;
+    max-width:900px;
+    margin:0 auto;
+}
+
+.feature{
+    background:#0b1220;
+    border:1px solid #1f2937;
+    padding:16px;
+    border-radius:8px;
+    text-align:left;
+}
+
+.feature h3{
+    font-size:14px;
+    margin-bottom:6px;
+    color:#e5e7eb;
+}
+
+.feature p{
+    font-size:12px;
+    color:#9ca3af;
+    line-height:1.5;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:20px;
+    font-size:12px;
+    color:#6b7280;
+    border-top:1px solid #1f2937;
+    margin-top:30px;
+}
+</style>
+
 </head>
 
 <body>
 
 <nav>
-    <div class="logo">🌊 Aqua RP</div>
+    <div class="logo">AQUA ROLEPLAY</div>
 
     <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="sollicitatie.html">Sollicitaties</a></li>
-        <li><a href="nieuws.html">Nieuws</a></li>
+        <li><a href="sollicitatie.html">Apply</a></li>
+        <li><a href="nieuws.html">News</a></li>
         <li><a href="staff.html">Staff</a></li>
-        <li><a href="regels.html">Regels</a></li>
+        <li><a href="regels.html">Rules</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
 </nav>
 
 <header class="hero">
-    <div class="hero-content">
+    <h1>AQUA ROLEPLAY</h1>
+    <p>
+        Serious Dutch roleplay server. No chaos, no random RP — just structured gameplay,
+        departments, and real progression.
+    </p>
 
-        <h1>Aqua Roleplay</h1>
-
-        <p>
-            Een Nederlandse roleplay server waar je geen “random server nummer 58” bent,
-            maar echt een plek hebt in de stad.
-        </p>
-
-        <div class="buttons">
-            <a href="https://discord.com" target="_blank" class="btn primary">Join Discord</a>
-            <a href="sollicitatie.html" class="btn secondary">Solliciteren</a>
-        </div>
-
+    <div class="buttons">
+        <a href="https://discord.com" target="_blank" class="btn primary">JOIN DISCORD</a>
+        <a href="sollicitatie.html" class="btn secondary">APPLY NOW</a>
     </div>
 </header>
 
@@ -47,52 +229,52 @@
 
     <div class="card">
         <h2>500+</h2>
-        <p>Spelers in community</p>
+        <p>Community members</p>
     </div>
 
     <div class="card">
         <h2>24/7</h2>
-        <p>Server & Support online</p>
+        <p>Server online</p>
     </div>
 
     <div class="card">
         <h2>REAL</h2>
-        <p>Serieuze roleplay</p>
+        <p>Serious RP</p>
     </div>
 
 </section>
 
 <section class="features">
 
-    <h1>Wat maakt Aqua RP anders?</h1>
+    <h1>SERVER FEATURES</h1>
 
     <div class="feature-grid">
 
         <div class="feature">
-            <h3>👮 Politie & Hulpdiensten</h3>
-            <p>Goed georganiseerde diensten met echte roleplay situaties.</p>
+            <h3>POLICE & EMS</h3>
+            <p>Structured departments with realistic scenarios.</p>
         </div>
 
         <div class="feature">
-            <h3>🏙 Stad & Economie</h3>
-            <p>Bouw je leven op, werk, rijd en groei in de server economie.</p>
+            <h3>ECONOMY</h3>
+            <p>Build your life, work jobs, and grow your roleplay story.</p>
         </div>
 
         <div class="feature">
-            <h3>🔥 Events & Chaos</h3>
-            <p>Regelmatig events waar alles kan gebeuren.</p>
+            <h3>EVENTS</h3>
+            <p>Dynamic server events with chaos and storytelling.</p>
         </div>
 
         <div class="feature">
-            <h3>🛠 Actieve staff</h3>
-            <p>Geen dode server — altijd mensen die helpen en ingrijpen.</p>
+            <h3>ACTIVE STAFF</h3>
+            <p>Always moderated, always supported.</p>
         </div>
 
     </div>
 </section>
 
 <footer>
-    © 2026 Aqua Roleplay • gemaakt voor echte roleplay
+    © 2026 Aqua Roleplay • Serious Roleplay Community
 </footer>
 
 </body>
