@@ -10,14 +10,8 @@
 body{
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
-    background:#050914;
+    background:#070b14;
     color:#d1d5db;
-    animation: fadeIn 0.5s ease;
-}
-
-@keyframes fadeIn{
-    from{opacity:0;}
-    to{opacity:1;}
 }
 
 /* NAV */
@@ -59,34 +53,20 @@ nav ul li a:hover{
 .container{
     max-width:760px;
     margin:70px auto;
-    padding:28px;
+    padding:26px;
     background:linear-gradient(180deg,#0b1220,#070b14);
     border:1px solid #1f2937;
     border-left:4px solid #3b82f6;
     border-radius:10px;
-    box-shadow:0 20px 60px rgba(0,0,0,0.6);
-
-    animation: slideUp 0.6s ease;
 }
 
-@keyframes slideUp{
-    from{
-        transform:translateY(15px);
-        opacity:0;
-    }
-    to{
-        transform:translateY(0);
-        opacity:1;
-    }
-}
-
-/* HEADER */
+/* TITLE */
 h1{
-    margin:0;
-    font-size:20px;
     text-align:center;
-    letter-spacing:1px;
+    font-size:20px;
+    margin:0;
     color:#f3f4f6;
+    letter-spacing:1px;
 }
 
 .subtitle{
@@ -94,7 +74,14 @@ h1{
     font-size:12px;
     color:#9ca3af;
     margin-top:6px;
-    margin-bottom:22px;
+    margin-bottom:16px;
+}
+
+.status{
+    text-align:center;
+    font-size:12px;
+    color:#f87171;
+    margin-bottom:18px;
 }
 
 /* FORM GRID */
@@ -104,9 +91,15 @@ form{
     gap:14px;
 }
 
+/* FIELD WRAPPER */
+.field{
+    display:flex;
+    flex-direction:column;
+}
+
 /* FULL WIDTH */
 .full{
-    grid-column:span 2;
+    grid-column:1 / -1;
 }
 
 /* LABEL */
@@ -115,8 +108,7 @@ label{
     color:#9ca3af;
     text-transform:uppercase;
     letter-spacing:1px;
-    margin-bottom:4px;
-    display:block;
+    margin-bottom:6px;
 }
 
 /* INPUTS */
@@ -129,6 +121,7 @@ input, select, textarea{
     color:#e5e7eb;
     font-size:13px;
     outline:none;
+    box-sizing:border-box;
     transition:0.2s;
 }
 
@@ -141,22 +134,13 @@ textarea:focus{
 
 /* TEXTAREA */
 textarea{
-    min-height:90px;
+    min-height:95px;
     resize:none;
-}
-
-/* SECTION BOX LOOK */
-.section{
-    grid-column:span 2;
-    padding:12px;
-    border:1px solid #1f2937;
-    border-radius:8px;
-    background:rgba(11,18,32,0.6);
 }
 
 /* BUTTON */
 button{
-    grid-column:span 2;
+    grid-column:1 / -1;
     padding:12px;
     border-radius:6px;
     border:1px solid #2b3445;
@@ -178,12 +162,11 @@ button:active{
     transform:scale(0.98);
 }
 
-/* small status */
-.status{
-    text-align:center;
-    font-size:12px;
-    color:#f87171;
-    margin-bottom:14px;
+/* MOBILE FIX */
+@media (max-width:700px){
+    form{
+        grid-template-columns:1fr;
+    }
 }
 </style>
 
@@ -207,22 +190,21 @@ button:active{
 
 <h1>SOLLICITATIE FORMULIER</h1>
 <div class="subtitle">Whitelist aanvraag • beoordeling door staff team</div>
-
 <div class="status">SERVER MOMENTEEL GESLOTEN</div>
 
 <form id="sollicitatieForm">
 
-    <div>
+    <div class="field">
         <label>Discord naam</label>
         <input type="text" id="naam" required placeholder="username#0000">
     </div>
 
-    <div>
+    <div class="field">
         <label>Leeftijd</label>
         <input type="number" id="leeftijd" required placeholder="14+">
     </div>
 
-    <div class="full">
+    <div class="field full">
         <label>Functie</label>
         <select id="functie">
             <option>Politie</option>
@@ -233,22 +215,22 @@ button:active{
         </select>
     </div>
 
-    <div class="section full">
+    <div class="field full">
         <label>Ervaring in roleplay</label>
         <textarea id="ervaring"></textarea>
     </div>
 
-    <div class="section">
+    <div class="field">
         <label>3 sterke punten</label>
         <textarea id="pluspunten"></textarea>
     </div>
 
-    <div class="section">
+    <div class="field">
         <label>3 zwakke punten</label>
         <textarea id="minpunten"></textarea>
     </div>
 
-    <div class="section full">
+    <div class="field full">
         <label>Motivatie</label>
         <textarea id="motivatie"></textarea>
     </div>
